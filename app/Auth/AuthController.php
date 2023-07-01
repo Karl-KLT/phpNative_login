@@ -8,10 +8,11 @@ class AuthController extends Controller
     // fetch_assoc
     public function login(string $email,string $password)
     {
-        $table = $this->auth['table'];
-        $def_email = $this->auth['default_email'];
-        $def_password = $this->auth['default_password'];
-        $def_type = $this->auth['default_type'];
+        $table = auth('table');
+        
+        $def_email = auth('default_email');
+        $def_password = auth('default_password');
+        $def_type = auth('default_type');
 
         $user = $this->conn->query("SELECT * FROM `$table` WHERE `$def_email` LIKE '$email' and `$def_password` LIKE '$password'")->fetch_assoc();
         
