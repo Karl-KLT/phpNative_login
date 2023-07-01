@@ -4,6 +4,7 @@ final class userTypes
 {
     CONST ADMIN = 1;
     CONST CLIENT = 0;
+    
     public static function getAll(): array
     {
         return [
